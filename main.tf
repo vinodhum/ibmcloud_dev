@@ -1,3 +1,7 @@
-resource "ibm_is_vpc" "dev" {
-  name = "dev"
+module "vpc" {
+  source = "./modules/network/vpc"
+
+  vpc-name       = var.vpc-name
+  private-subnet = var.private-subnet
+  public-subnet  = var.public-subnet
 }
